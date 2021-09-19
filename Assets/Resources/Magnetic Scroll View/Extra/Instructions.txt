@@ -1,0 +1,6 @@
+Instructions:
+1- Select Elements on the viewport of Magnetic Scroll View.
+2- Browsing to the "Extra" folder you'll find the Panel Controller (Animator Controller).
+3- Assign the Panel Controller to the selected elements.
+4- Add the Animation Manager component to the Magnetic Scroll View and set the Selected Bool to "Selected".
+5- Now just add this instance of the Animation Manager to the OnSelectionChange event, you should use the dynamic function TriggerAnimation.

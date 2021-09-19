@@ -1,0 +1,188 @@
+﻿1.3.5.1 (July 18, 2019)
+-----------------------
+* Bug fixes:
+	- Index Table Manager was not working on Unity 2018.3 after update 1.3.5, this is now fixed.
+
+1.3.5 (July 03, 2019)
+-----------------------
+* Bug fixes:
+	- The error "InvalidOperationException: Destroying a GameObject inside a Prefab instance is not allowed." is now fixed.
+
+1.3.4 (April 19, 2019)
+-----------------------
+* Changes:
+	- Now you can use Animation Curve for transition effects.
+	- The field Angular Speed was renamed to Transition Speed, and the value range has been changed from "1 - 360" to "0.1 - 10".
+
+1.3.3 (April 17, 2019)
+-----------------------
+* Bug fixes:
+	- Fixed the error related to MoveIndicator method on IndexTableManager.
+	- Circular positioning of the elements was not working properly, since the update 1.2.9. This is now fixed.
+
+1.3.2 (April 12, 2019)
+-----------------------
+* Bug fixes:
+	- Smooth Transition now keeps its smoothness till it finishes.
+	- "Never assigned" and "Never used" variables were removed.
+
+1.3.1 (March 23, 2019)
+-----------------------
+* Changes:
+	- Realtime Selection now works with SnapToNearest snap mode, it isn't exclusive to Inertia function anymore.
+	- Only the first touch input should work for scrolling now, this solves some bugs related to multiple touch input.
+* Bug fixes:
+	- Any bug related to multiple touch input should be fixed now.
+
+1.3.0 (March 08, 2019)
+-----------------------
+* New:
+	- Now the scrolling can be interrupted at any time, on a PointerDown event.
+* Bug  fixes:
+	- Errors related to prefabs are now fixed.
+	- This error is now fixed: transform.localPosition assign attempt for 'Panel' is not valid. Input localPosition is {NaN, NaN, NaN}.
+	- Elements were disappearing on multiple touch input, this is now fixed.
+
+1.2.9.1 (February 01, 2019)
+-----------------------
+* New:
+	- I've added a new public function InstantScrollTo, this will help you instantly scroll to the desired element.
+
+1.2.9 (January 29, 2019)
+-----------------------
+* New:
+	- Now you can align elements by using their anchors and pivot.
+* Bug fixes:
+	- The bug that was making the scroller goes from start to end and vice versa while Inertia options were enabled, is now fixed.
+
+1.2.8.1 (October 30, 2018)
+-----------------------
+* Performance Improvement:
+	- The OnSelectionChange event was being called multiple times after the last update, this is now fixed.
+
+1.2.8 (October 28, 2018)
+-----------------------
+* Changes:
+	- Now you can choose whether the OnSelectionChange event will be delayed or not. Toggle on/off the Delay option on the OnSelectionChange.
+	- Now there is a Demo Scene and an Instructions text file for better understanding of how the Animation Manager works.
+
+1.2.7 (September 28, 2018)
+-----------------------
+* Bug fixes:
+	- Magnetic Scroll Rect should not show errors when there are no elements in the viewport.
+	- The SwipeToNearest mode issues have been fixed.
+	
+1.2.6 (August 05, 2018)
+-----------------------
+* New:
+	- Two new functions was added to the MagneticScrollRect class, GetElementAngle and GetNormalizedElementAngle.
+	- Two new public read-only properties were added to the MagneticScrollRect class, ScrollAngle, and NormalizedScrollAngle.
+	- I new component called ColorChanger was added, it will change the color of elements based on scroll angle position.
+	- New demo scene demonstrating the nested scroll views.
+
+* Changes:
+	- The namespace of SwipeDetection class and Swipe enum was changed to MagneticScrollView in order to avoid colliding with other Unity assets.
+
+* Bug fixes:
+	- I've encountered and fixed some bugs on nested Scroll Views, introduced on the last version.
+
+1.2.5.1 (June 05, 2018)
+-----------------------
+* New:
+	- Now you can create nested Magnetic Scroll Views, this means you can add a Magnetic Scroll View inside the viewport of another Magnetic Scroll View or even inside the Unity's Scroll View.
+
+* Bug fixes:
+	- The ScrollTo (int index) was scrolling to random indexes, this is now fixed.
+	
+1.2.5 (May 05, 2018)
+-----------------------
+* New:
+	- Now you can choose between concave or convex curvatures to use at the Circular Layout Mode.
+	- Now you will be able to add a distance offset to elements.
+
+* Changes:
+	- Scroll system was highly improved.
+
+1.2.4.2 (April 11, 2018)
+-----------------------
+* New:
+	- Now the Magnetic Scroll Rect class has a new public function called ScrollTo(int index), you can use it to scroll to a specific index.
+	- Now there is an option to scroll smoothly.
+
+* Bug fixes:
+	- Now if you scroll fast, it will no more scroll to the reverse direction.
+
+1.2.4.1 (March 14, 2018)
+-----------------------
+* Bug fixes:
+	- Index Table was not working in build after the update version 1.2.3, this is now fixed.
+	- The Canvas Render Mode was being automatically changed to "Screen Space - Camera" after a new "Magnetic Scroll View" had been created. This is now fixed.
+
+1.2.4 (March 07, 2018)
+-----------------------
+* New:
+	- Now deactivated objects will be removed from the list of elements.
+	- Now you can get the elements list with the new Elements property.
+
+* Changes:
+	- The onSelectionChange event will be invoked on enable and when inertia is started.
+	- The Scroll will be reset on enable.
+	- The transition speed is now balanced, this means the speed will keep the same independent of the number of elements.
+
+* Bug fixes:
+	- Errors caused by elements being created when Magnetic Scroll View was deactivated, this is now fixed.
+
+1.2.3 (February 20, 2018)
+-----------------------
+* New:
+	- Now you'll be able to rotate elements according to its angular position, based on the circular factor.
+	- The main feature of this version is the Inertia. When Inertia is set the content will continue to move when the pointer is released after a drag.
+	- On Selection Change event was added, this is invoked when the current selection has changed, passing a GameObject type dynamic argument.
+	- Now you have access to the current selection by using the method GetSelected, you can also take out the selected index.
+
+* Bug fixes:
+	- Unity was crashing when trying to Undo after create a new panel, this was related to the index table and is now fixed.
+	- Crashing when trying to Undo removed reference from Index and Indicator prefabs, is now fixed.
+
+1.2.2 (January 08, 2018)
+-----------------------
+* Bug fixes:
+	- When LayoutMode was changed to Linear the infinite scrolling wasn't being set to false.
+	- The Linear mode was working with infinite scrolling toggled on, now this is fixed.
+	- Now when some settings change in build, the elements will be automatically rearranged, even if the Auto Arranging is off.
+
+1.2.1 (January 03, 2018)
+-----------------------
+* Bug fixes:
+	- The MagneticScrollRect was delaying the auto arranging in a wrong way causing some issues when users tried to change elements transform settings, this is now fixed.
+	- There were some fatal errors making it impossible to create builds of any platform. This happened because I've mistakenly updated the asset with a new version not finished yet. I'm really sorry about that, now this is fixed.
+1.2 (December 13, 2017)
+-----------------------
+* The system has been completely revamped, improving the way it works, with a whole new set of features:
+	- Magnetic Scroll Rect component inspector has been improved.
+	- Tooltips were added to labels.
+	- Now there is an Auto Arranging Mode that can be started or stopped when needed.	
+	- New Layout Modes (Circular or Linear).
+	- Invert Order was added.
+	- Use margin options was added.
+	- New Snap Mode -> Both (Swipe + Snap to Nearest).
+	- Infinite Scrolling was added.
+	- Scroll Additional Limits now is based on angles (0 - 90).
+
+* Scripting improvements:
+	- Class, Properties and Methods comments added.
+	- All classes now have namespaces.
+
+* Bug fixes:
+	- Dynamically adding or changing elements on the viewport will no more cause problems.
+	- Magnetic Scroll View or any of its components now works fine when disabled on scene load.
+	- Other minor bug fixes (mainly fixed by changing the whole system).
+
+1.1 (August 02, 2017)
+-----------------------
+* Magnetic Scroll View requires an Event System game object in order to work. This will now be created automatically when a new Magnetic Scroll View is added to the scene (if there isn't already one).
+* The new 'Magnetic Scroll View' is now correctly pre-configured, with their events set up properly.
+
+1.0 (July 18, 2017)
+-----------------------
+* Initial Release.
